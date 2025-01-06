@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrategia I - Mega Sena</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #e0f7e9; /* Verde claro da Mega Sena */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content {
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .content ul {
+      text-align: left;
+    }
+
+    .infomacoesEstrategia {
+      max-width: 700px;
+      width: 100%;
+      padding: 20px;
+      background: #e0f7e9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      color: #006400; /* Verde escuro da Mega Sena */
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px;
+      row-gap: 10px;
+      background: #006400; /* Verde escuro */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #004d00; /* Verde mais escuro */
+    }
+
+    .info-section {
+      margin-top: 20px;
+    }
+
+    .info-group {
+      margin-bottom: 15px;
+    }
+
+    .info-group h3 {
+      color: #006400;
+    }
+
+    .info-group p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .duques-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .duques-table th, .duques-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .duques-table th {
+      background-color: #006400;
+      color: #fff;
+    }
+
+    .duques-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .results p {
+      background: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: monospace;
+      margin-top: 10px;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Adiciona um espaço entre os botões */
+    }
+
+    .button-container button {
+      padding: 10px;
+      background: #006400; /* Verde escuro */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .button-container button:hover {
+      background: #004d00; /* Verde mais escuro */
+    }
+
+    #downloadLink button {
+      background: #007BFF; /* Azul para o botão de download */
+    }
+
+    #downloadLink button:hover {
+      background: #0056b3; /* Azul mais escuro */
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Estratégia I - Mega Sena</h1>
+
+    <div class="info-section">
+      <div class="infomacoesEstrategia">
+        <p>A estratégia será dividida em Dezenas Baixas, Duque e Dezenas Baixas.</p>
+        <p>Onde, será dividido conforme a seguir:</p>
+        <ul>
+          <li>1 <u>dezena baixa</u> no início do jogo.</li>
+          <li>1 <u>duque</u> no meio do jogo.</li>
+          <li>1 <u>dezena alta</u> no fim do jogo.</li>
+          <li>As <u>outras duas dezenas</u> podem ser qualquer uma aleatória (não repetida no mesmo jogo).</li>
+            <p>Em outras palavras:</li>
+          <li>A primeira dezena baixa (posição 1) é fixa.</li>
+          <li>A segunda dezena baixa (posição 2) é aleatória, mas não pode ser igual à fixa.</li>
+          <li>O duque ocupa as posições 3 e 4 do jogo.</li>
+          <li>A quinta dezena alta (posição 5) é aleatória, mas não pode ser igual à fixa.</li>
+          <li>A sexta dezena alta (posição 6) é fixa.</li>
+        </ul>
+        <p>Além disso, o usuário poderá fixar tanto uma Dezena Baixa quanto uma Dezena Alta.</p>
+      </div>
+      <p><b>Obs: Os números 10 e 50 nunca farão parte dos jogos gerados.</b></p>
+    </div>
+
+    <div class="info-group">
+      <h3>Dezenas Baixas <small><i>(Abaixo do número 10)</i></small>:</h3>
+      <p>1, 2, 3, 4, 5, 6, 7, 8, 9</p>
+    </div>
+    <div class="info-group">
+      <h3>Dezenas Altas <small><i>(Acima do número 50)</i></small>:</h3>
+      <p>51, 52, 53, 54, 55, 56, 57, 58, 59</p>
+    </div>
+    <div class="info-group">
+      <h3>Duques (Pares entre 30 e 39):</h3>
+      <table class="duques-table">
+        <thead>
+          <tr>
+            <th>Par 1</th>
+            <th>Par 2</th>
+            <th>Par 3</th>
+            <th>Par 4</th>
+            <th>Par 5</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr><td>30, 31</td><td>30, 32</td><td>30, 33</td><td>30, 34</td><td>30, 35</td></tr>
+            <tr><td>30, 36</td><td>30, 37</td><td>30, 38</td><td>30, 39</td><td>31, 32</td></tr>
+            <tr><td>31, 33</td><td>31, 34</td><td>31, 35</td><td>31, 36</td><td>31, 37</td></tr>
+            <tr><td>31, 38</td><td>31, 39</td><td>32, 33</td><td>32, 34</td><td>32, 35</td></tr>
+            <tr><td>32, 36</td><td>32, 37</td><td>32, 38</td><td>32, 39</td><td>33, 34</td></tr>
+            <tr><td>33, 35</td><td>33, 36</td><td>33, 37</td><td>33, 38</td><td>33, 39</td></tr>
+            <tr><td>34, 35</td><td>34, 36</td><td>34, 37</td><td>34, 38</td><td>34, 39</td></tr>
+            <tr><td>35, 36</td><td>35, 37</td><td>35, 38</td><td>35, 39</td><td>36, 37</td></tr>
+            <tr><td>36, 38</td><td>36, 39</td><td>37, 38</td><td>37, 39</td><td>38, 39</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+   
+
+    <label for="dezenaBaixaFixa">Dezena Baixa Fixa:</label>
+    <input type="number" id="dezenaBaixaFixa" min="1" max="9" placeholder="Escolha entre 1 a 9">
+    <label for="dezenaAltaFixa">Dezena Alta Fixa:</label>
+    <input type="number" id="dezenaAltaFixa" min="51" max="60" placeholder="Escolha entre 51 a 60">
+    <label for="numJogos">Gerador de Jogos - <small><i>Escolha a quantidade</i></small>:</label>
+    <input type="number" id="numJogos" min="1" max="1000" placeholder="Max de mil jogos">
+    
+
+
+    <div class="button-container">
+      <button onclick="gerarJogos()">Gerar Jogos</button>
+      <button onclick="resetarJogos()">Resetar Jogos</button>
+      <a id="downloadLink" style="display:none; margin-left: 15px;" href="#" download="jogosMegaSena.txt"><button>Baixar Jogos</button></a>
+    </div>
+
+    <div class="results" id="results"></div>
+    <a id="downloadLink" style="display:none; margin-top: 15px;" href="#" download="jogosMegaSena.txt">Baixar Jogos</a>
+  </div>
+
+<script>
+function gerarJogos() {
+  const dezenasBaixas = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const dezenasAltas = [51, 52, 53, 54, 55, 56, 57, 58, 59];
+  const duques = [
+    [30, 31], [30, 32], [30, 33], [30, 34], [30, 35],
+    [30, 36], [30, 37], [30, 38], [30, 39], [31, 32],
+    [31, 33], [31, 34], [31, 35], [31, 36], [31, 37],
+    [31, 38], [31, 39], [32, 33], [32, 34], [32, 35],
+    [32, 36], [32, 37], [32, 38], [32, 39], [33, 34],
+    [33, 35], [33, 36], [33, 37], [33, 38], [33, 39],
+    [34, 35], [34, 36], [34, 37], [34, 38], [34, 39],
+    [35, 36], [35, 37], [35, 38], [35, 39], [36, 37],
+    [36, 38], [36, 39], [37, 38], [37, 39], [38, 39]
+  ];
+
+  const numJogos = parseInt(document.getElementById("numJogos").value);
+  const dezenaBaixaFixa = parseInt(document.getElementById("dezenaBaixaFixa").value);
+  const dezenaAltaFixa = parseInt(document.getElementById("dezenaAltaFixa").value);
+
+  if (!numJogos || numJogos <= 0 || !dezenaBaixaFixa || !dezenaAltaFixa) {
+    alert("Insira uma quantidade válida de jogos e escolha as dezenas fixas!");
+    return;
+  }
+
+  const resultsDiv = document.getElementById("results");
+  const jogos = [];
+  resultsDiv.innerHTML = ""; // Limpa resultados anteriores
+
+  while (jogos.length < numJogos) {
+    const jogo = [];
+
+    // 1 dezena baixa fixa no início do jogo
+    jogo.push(dezenaBaixaFixa);
+
+    // 1 dezena baixa aleatória (2ª posição)
+    let dezenaBaixaAleatoria;
+    do {
+      dezenaBaixaAleatoria = dezenasBaixas[Math.floor(Math.random() * dezenasBaixas.length)];
+    } while (dezenaBaixaAleatoria === dezenaBaixaFixa); // Garante que a aleatória não seja a fixa
+    jogo.push(dezenaBaixaAleatoria);
+
+    // 1 duque no meio do jogo (3º e 4º posição)
+    const duque = duques[Math.floor(Math.random() * duques.length)];
+    jogo.push(duque[0]);
+    jogo.push(duque[1]);
+
+    // 1 dezena alta aleatória (5ª posição)
+    let dezenaAltaAleatoria;
+    do {
+      dezenaAltaAleatoria = dezenasAltas[Math.floor(Math.random() * dezenasAltas.length)];
+    } while (dezenaAltaAleatoria === dezenaAltaFixa); // Garante que a aleatória não seja a fixa
+    jogo.push(dezenaAltaAleatoria);
+
+    // 1 dezena alta fixa no fim do jogo (6ª posição)
+    jogo.push(dezenaAltaFixa);
+
+    // Ordenar o jogo em ordem crescente
+    jogo.sort((a, b) => a - b); // Ordena os números em ordem crescente
+
+    jogos.push(jogo);
+  }
+
+  jogos.forEach((jogo, index) => {
+    resultsDiv.innerHTML += `<p>Jogo ${index + 1}: ${jogo.join(' ')}</p>`;
+  });
+
+   // Enable download
+    const downloadLink = document.getElementById("downloadLink");
+    //let jogosTexto = jogos.map(() => jogo.join(' ')).join('\n');
+      let jogosTexto = jogos.map((jogo) => jogo.join(' ')).join('\n');
+    const blob = new Blob([jogosTexto], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    downloadLink.href = url;
+    downloadLink.style.display = 'inline';
+}
+
+function resetarJogos() {
+  document.getElementById("dezenaBaixaFixa").value = "";
+  document.getElementById("dezenaAltaFixa").value = "";
+  document.getElementById("numJogos").value = "";
+  document.getElementById("results").innerHTML = "";
+  document.getElementById("downloadLink").style.display = "none";
+}
+
+
+
+</script>
+</body>
+</html>
